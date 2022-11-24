@@ -1,13 +1,12 @@
 ### Hi there 👋
 
-I'm a researcher pursuing a master's degree in Human-Computer Interaction.
+It is hard to describe myself. I have extensive experience making random things. You won't find two projects that look or work the same in my profile, and I hope that's a good thing for you. :)
+
+Right now, I'm unemployed and looking for opportunities (preferably senior level at smaller companies).
 
 - 🔭 I’m currently investigating the bridge between developers and designers.
-- 👯 I’m looking for collaboration on [Figma to Code](https://github.com/bernaferrari/FigmaToCode).
 - 💬 Ask me about mobile, web, or anything random.
 - 😎 Feel free to reach me on [Twitter](https://twitter.com/bernaferrari), Reddit or anywhere!
-
-[![ReadMe Card](https://github-readme-stats.vercel.app/api?username=bernaferrari&show_icons=true&include_all_commits=true&hide_rank=true&bg_color=30,FF5F6D,ffb88c&title_color=fff&text_color=fff&icon_color=fff)](https://github.com/anuraghazra/github-readme-stats)
 
 <p align="left"> 
   <b>Visitor count</b><br>
