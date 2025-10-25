@@ -7,8 +7,3 @@ Right now, I'm happy working in design to code.
 - 🔭 I’m currently investigating the bridge between developers and designers.
 - 💬 Ask me about mobile, web, or anything random.
 - 😎 Feel free to reach me on [Twitter](https://twitter.com/bernaferrari), Reddit or anywhere!
-
-<p align="left"> 
-  <b>Visitor count</b><br>
-  <img src="https://profile-counter.glitch.me/bernaferrari/count.svg" />
-</p>
