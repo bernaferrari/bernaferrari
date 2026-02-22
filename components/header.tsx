@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, LayoutGroup } from "framer-motion";
+import posthog from "posthog-js";
 import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
@@ -32,6 +33,12 @@ export function Header() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
+                    onClick={() =>
+                      posthog.capture("nav_item_clicked", {
+                        nav_item_name: item.name,
+                        nav_item_path: item.path,
+                      })
+                    }
                     className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors duration-200 block ${
                       isActive
                         ? "text-purple-600 dark:text-purple-300"

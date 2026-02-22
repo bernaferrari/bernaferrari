@@ -1,14 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import posthog from "posthog-js";
 
 export function CopyButton({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      posthog.capture("copy_code_clicked", {
+        code_length: code.length,
+      });
+    } catch (error) {
+      posthog.captureException(error);
+    }
   };
 
   return (

@@ -2,13 +2,23 @@
 
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
 
+  const handleToggle = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    posthog.capture("theme_toggled", {
+      previous_theme: theme,
+      new_theme: newTheme,
+    });
+  };
+
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={handleToggle}
       className="relative p-2 rounded-full bg-white/10 dark:bg-zinc-900/10 hover:bg-white/20 dark:hover:bg-zinc-900/20 backdrop-blur-md border border-white/20 dark:border-white/10 transition-colors w-9 h-9 flex items-center justify-center overflow-hidden"
       aria-label="Toggle theme"
     >

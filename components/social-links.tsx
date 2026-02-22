@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 
 interface SocialLink {
   name: string;
@@ -67,6 +68,12 @@ function SocialLinksBase({ align }: { align: "center" | "start" }) {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() =>
+            posthog.capture("social_link_clicked", {
+              platform: link.name,
+              url: link.url,
+            })
+          }
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.1 }}

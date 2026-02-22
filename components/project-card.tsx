@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import type { Project } from "@/lib/projects";
 
 interface ProjectCardProps {
@@ -9,11 +10,21 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  const handleClick = () => {
+    posthog.capture("project_clicked", {
+      project_title: project.title,
+      project_url: project.url,
+      project_tech: project.tech,
+      project_stars: project.stars,
+    });
+  };
+
   return (
     <motion.a
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.4 }}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 
 export function NewsletterSignup() {
   const [email, setEmail] = useState("");
@@ -15,6 +16,9 @@ export function NewsletterSignup() {
     setTimeout(() => {
       setStatus("success");
       setEmail("");
+      posthog.capture("newsletter_signup_submitted", {
+        success: true,
+      });
     }, 1500);
   };
 

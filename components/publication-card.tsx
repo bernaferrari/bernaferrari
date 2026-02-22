@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import { Publication } from "@/lib/publications";
 
 interface PublicationCardProps {
@@ -9,11 +10,22 @@ interface PublicationCardProps {
 }
 
 function PublicationCard({ publication, index }: PublicationCardProps) {
+  const handleClick = () => {
+    posthog.capture("publication_clicked", {
+      publication_title: publication.title,
+      publication_venue: publication.venue,
+      publication_year: publication.year,
+      publication_citations: publication.citations,
+      publication_url: publication.url,
+    });
+  };
+
   return (
     <motion.a
       href={publication.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
