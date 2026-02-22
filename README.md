@@ -1,9 +1,8 @@
-### Hi there 👋
+# Hey!
 
-It is hard to describe myself. I have extensive experience making random things. You won't find two projects that look or work the same in my profile, and I hope that's a good thing for you. :)
+I'm a design engineer at the intersection of design systems, frontend, and developer tooling —
+focused on the gap between how interfaces are designed and how they're actually built.
 
-Right now, I'm happy working in design to code.
+Currently making design-to-code workflows more reliable, experimenting with AI coding agents and building open source tools.
 
-- 🔭 I’m currently investigating the bridge between developers and designers.
-- 💬 Ask me about mobile, web, or anything random.
-- 😎 Feel free to reach me on [Twitter](https://twitter.com/bernaferrari), Reddit or anywhere!
+[Website](https://bernaferrari.vercel.com) · [X](https://x.com/bernaferrari) · [LinkedIn](https://www.linkedin.com/in/bernaferrari)

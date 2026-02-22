@@ -1,0 +1,60 @@
+export const metadata = {
+  title: "Engineering Log: Optimizing java-diff-utils for Kotlin",
+  alternates: {
+    canonical: "/n/c1",
+  },
+};
+
+# Engineering Log: Optimizing java-diff-utils for Kotlin
+
+<br />
+
+I recently released [Fast Kotlin Diff Utils](https://github.com/bernaferrari/fast-kotlin-diff-utils), a drop-in replacement for `java-diff-utils` that is approximately **10x faster**.
+
+This project started because the original library (Myers' algorithm implementation) was causing UI freezes in my application. This post documents the process of modernizing the codebase and the specific optimizations applied.
+
+---
+
+## 1. The Migration Strategy
+
+The goal was not just a rewrite, but a modernization. `java-diff-utils` is a stable but older library.
+I wanted to bring it up to modern standards:
+
+- **Java 17 / Kotlin 3.2.0** baseline.
+- **Null Safety** via Kotlin.
+- **Strict Testing Contract**: Before applying any optimizations, I ensured the original test suite passed 100%. This gave me a safety net to refactor aggressively.
+
+## 2. Leveraging LLMs for Refactoring
+
+The library is relatively small (~25 files), which fits entirely within the context window of current LLMs (Gemini 1.5 Pro, Claude 3.5 Sonnet).
+This allowed for a highly efficient workflow:
+
+1.  **Translation**: I used LLMs to port the Java code to Kotlin.
+2.  **Cross-Pollination**: I was simultaneously working on a Dart port. When an optimization worked in Kotlin, I asked the model to apply the same pattern to Dart, and vice-versa.
+3.  **Optimization suggestions**: The models suggested several low-level optimizations, some of which were excellent, while others were counter-productive.
+
+## 3. Optimizations: Wins & Losses
+
+### ✅ Win: Primitive Collections (`IntIntMap`)
+
+Profiling revealed significant overhead from boxing integers in `HashMap<Integer, Integer>`.
+We replaced these with a custom `IntIntMap` (using primitive arrays), suggested by Gemini.
+**Result**: A substantial reduction in memory allocation and GC pressure, leading to the largest single speedup in the project.
+
+### ❌ Loss: Concurrency
+
+I initially hypothesized that parallelizing the diff algorithm using Kotlin Coroutines would improve performance.
+I implemented a version where independent chunks of the diff were processed in parallel.
+**Result**: For typical file sizes (source code, configuration files), the context-switching overhead outweighed the parallel gains. The code became significantly more complex for a net negative performance impact. I reverted this change.
+
+### ✅ Win: Hash-Based Snake Detection
+
+We introduced a pre-check using hash equality before performing full object comparisons. This allows the algorithm to skip expensive `equals()` calls for lines that are clearly different.
+
+## 4. Conclusion
+
+The final result is a library that is significantly faster and easier to maintain.
+
+For me, the key takeaway was not that "AI wrote the code," but that it allowed me to rapidly experiment with different architectural decisions (like custom collections vs. standard ones) and quickly verify the results against a strict test suite.
+
+[View the code on GitHub](https://github.com/bernaferrari/fast-kotlin-diff-utils)
