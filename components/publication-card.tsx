@@ -29,7 +29,7 @@ function PublicationCard({ publication, index }: PublicationCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="group block px-2 py-3 transition-[padding,background-color] duration-200 hover:px-3 hover:bg-gray-50/80 dark:hover:bg-zinc-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-zinc-700"
+      className="group block px-0 py-3 transition-[padding,background-color] duration-200 hover:px-3 hover:bg-gray-50/80 dark:hover:bg-zinc-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-zinc-700"
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">

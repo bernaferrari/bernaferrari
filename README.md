@@ -8,4 +8,4 @@ Currently:
 - 🤖 experimenting with AI coding agents
 - 🛠️ building open source tools
 
-[Website](https://bernaferrari.vercel.com) · [𝕏](https://x.com/bernaferrari) · [LinkedIn](https://www.linkedin.com/in/bernaferrari)
+[Website](https://bernaferrari.vercel.app) · [𝕏](https://x.com/bernaferrari) · [LinkedIn](https://www.linkedin.com/in/bernaferrari)
