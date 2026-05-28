@@ -2,7 +2,7 @@
 
 I build polished open-source tools for **design-to-code**, **mobile UI**, and **developer workflows**.
 
-Mostly: Figma-to-code, Android apps, Flutter experiments, color systems, UI components, and small utilities that remove annoying manual work.
+Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, and small utilities that remove annoying manual work.
 
 [Website](https://bernaferrari.vercel.app) · [𝕏](https://x.com/bernaferrari) · [LinkedIn](https://www.linkedin.com/in/bernaferrari)
 
