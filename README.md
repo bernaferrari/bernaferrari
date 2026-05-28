@@ -36,14 +36,10 @@ Mostly: Figma-to-code, Android apps, Flutter experiments, color systems, UI comp
 
 * 🌈 **[color-studio](https://github.com/bernaferrari/color-studio)** — Explore and generate color systems with a cleaner visual workflow.
 * 💸 **[CashBalancer](https://github.com/bernaferrari/CashBalancer)** — Balance money across accounts and assets.
-* 📐 **[non_uniform_border](https://github.com/bernaferrari/non_uniform_border)** — Flutter borders with different widths per side.
 * 🦋 **[diagonal-wipe-icon-flutter](https://github.com/bernaferrari/diagonal-wipe-icon-flutter)** — Smooth animated icon transitions for Flutter.
-
-### UI components
-
-* 🧩 **[diagonal-wipe-icon](https://github.com/bernaferrari/diagonal-wipe-icon)** — Smooth animated icon transitions for Compose.
-* 🥳 **[EmojiSlider](https://github.com/bernaferrari/EmojiSlider)** — A playful Android slider component with personality.
 
 ### Other
 
+* 🧩 **[diagonal-wipe-icon](https://github.com/bernaferrari/diagonal-wipe-icon)** — Smooth animated icon transitions for Compose.
+* 📐 **[non_uniform_border](https://github.com/bernaferrari/non_uniform_border)** — Flutter borders with different widths per side.
 * 📄 **[text-to-files](https://github.com/bernaferrari/text-to-files)** — Turn AI-generated text into real project files faster.
