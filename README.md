@@ -18,6 +18,12 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 
 * 🔁 **[GradleKotlinConverter](https://github.com/bernaferrari/GradleKotlinConverter)** — Convert Android Gradle files from Groovy to Kotlin DSL.
 * 🧠 **[agent-board](https://github.com/bernaferrari/agent-board)** — A workflow board for tracking AI coding agents and tasks.
+* 📄 **[text-to-files](https://github.com/bernaferrari/text-to-files)** — Turn AI-generated text into real project files faster.
+
+<div align="center">
+<a href="https://github.com/bernaferrari/agent-board"><img src="https://raw.githubusercontent.com/bernaferrari/agent-board/HEAD/assets/header.png" alt="agent-board" width="49%"></a>
+<a href="https://github.com/bernaferrari/multi-diff"><img src="https://raw.githubusercontent.com/bernaferrari/multi-diff/HEAD/assets/header.png" alt="multi-diff" width="49%"></a>
+</div>
 
 ### Android
 
@@ -26,6 +32,14 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 * ✍️ **[markor](https://github.com/bernaferrari/markor)** — Material 3 Expressive redesign for a Markdown editor.
 * 🛡️ **[NetGuard](https://github.com/bernaferrari/NetGuard)** — Material 3 Expressive redesign for a network firewall app.
 * 🔒 **[rethink-app](https://github.com/bernaferrari/rethink-app)** — Material 3 Expressive redesign for a privacy and DNS firewall app.
+* 🧩 **[diagonal-wipe-icon](https://github.com/bernaferrari/diagonal-wipe-icon)** — Smooth animated icon transitions for Compose.
+
+<div align="center">
+<a href="https://github.com/bernaferrari/markor"><img src="https://github.com/bernaferrari/markor/raw/master/assets/more.png" alt="Markor" width="49%"></a>
+<a href="https://github.com/bernaferrari/NetGuard"><img src="https://github.com/bernaferrari/NetGuard/raw/master/assets/more%20-%20light.png" alt="NetGuard" width="49%"></a>
+<a href="https://github.com/bernaferrari/SDKMonitor"><img src="https://raw.githubusercontent.com/bernaferrari/SDKMonitor/HEAD/assets/header.png" alt="SDKMonitor" width="49%"></a>
+<a href="https://github.com/bernaferrari/EmojiSlider"><img src="https://raw.githubusercontent.com/bernaferrari/EmojiSlider/HEAD/assets/header.png" alt="EmojiSlider" width="49%"></a>
+</div>
 
 ### Swift
 
@@ -37,9 +51,4 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 * 🌈 **[color-studio](https://github.com/bernaferrari/color-studio)** — Explore and generate color systems with a cleaner visual workflow.
 * 💸 **[CashBalancer](https://github.com/bernaferrari/CashBalancer)** — Balance money across accounts and assets.
 * 🦋 **[diagonal-wipe-icon-flutter](https://github.com/bernaferrari/diagonal-wipe-icon-flutter)** — Smooth animated icon transitions for Flutter.
-
-### Other
-
-* 🧩 **[diagonal-wipe-icon](https://github.com/bernaferrari/diagonal-wipe-icon)** — Smooth animated icon transitions for Compose.
 * 📐 **[non_uniform_border](https://github.com/bernaferrari/non_uniform_border)** — Flutter borders with different widths per side.
-* 📄 **[text-to-files](https://github.com/bernaferrari/text-to-files)** — Turn AI-generated text into real project files faster.
