@@ -19,10 +19,11 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 * 🔁 **[GradleKotlinConverter](https://github.com/bernaferrari/GradleKotlinConverter)** — Convert Android Gradle files from Groovy to Kotlin DSL.
 * 🧠 **[agent-board](https://github.com/bernaferrari/agent-board)** — A workflow board for tracking AI coding agents and tasks.
 * 📄 **[text-to-files](https://github.com/bernaferrari/text-to-files)** — Turn AI-generated text into real project files faster.
+* 📄 **[multi-diff](https://github.com/bernaferrari/multi-diff)** — Compare multiple git diffs simultaneously.
 
 <div align="center">
 <a href="https://github.com/bernaferrari/agent-board"><img src="https://raw.githubusercontent.com/bernaferrari/agent-board/HEAD/assets/header.png" alt="agent-board" width="49%"></a>
-<a href="https://github.com/bernaferrari/multi-diff"><img src="https://raw.githubusercontent.com/bernaferrari/multi-diff/HEAD/assets/header.png" alt="multi-diff" width="49%"></a>
+<a href="https://github.com/bernaferrari/GradleKotlinConverter"><img src="https://raw.githubusercontent.com/bernaferrari/GradleKotlinConverter/HEAD/assets/header.png" alt="multi-diff" width="49%"></a>
 </div>
 
 ### Android
@@ -44,7 +45,6 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 ### Swift
 
 * 🧭 **[Default Opener](https://github.com/bernaferrari/default-opener)** — Take back control of default apps, file types, and URL schemes on macOS.
-* 🏆 **[RegexLearner](https://github.com/bernaferrari/RegexLearner)** — WWDC20 Swift Student Challenge winner.
 
 ### Flutter
 
