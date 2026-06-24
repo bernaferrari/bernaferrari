@@ -22,8 +22,8 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 * 📄 **[multi-diff](https://github.com/bernaferrari/multi-diff)** — Compare multiple git diffs simultaneously.
 
 <div align="center">
-<a href="https://github.com/bernaferrari/agent-board"><img src="https://raw.githubusercontent.com/bernaferrari/agent-board/HEAD/assets/header.png" alt="agent-board" width="49%"></a>
-<a href="https://github.com/bernaferrari/GradleKotlinConverter"><img src="https://raw.githubusercontent.com/bernaferrari/GradleKotlinConverter/HEAD/assets/header.png" alt="multi-diff" width="49%"></a>
+<a href="https://github.com/bernaferrari/agent-board"><img src="https://raw.githubusercontent.com/bernaferrari/agent-board/HEAD/assets/opengraph-image.png" alt="agent-board" width="49%"></a>
+<a href="https://github.com/bernaferrari/GradleKotlinConverter"><img src="https://raw.githubusercontent.com/bernaferrari/GradleKotlinConverter/HEAD/assets/opengraph-image.png" alt="multi-diff" width="49%"></a>
 </div>
 
 ### Android
