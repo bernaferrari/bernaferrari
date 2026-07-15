@@ -36,8 +36,8 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 * 🧩 **[diagonal-wipe-icon](https://github.com/bernaferrari/diagonal-wipe-icon)** — Smooth animated icon transitions for Compose.
 
 <div align="center">
-<a href="https://github.com/bernaferrari/markor"><img src="https://github.com/bernaferrari/markor/raw/master/assets/more.png" alt="Markor" width="49%"></a>
-<a href="https://github.com/bernaferrari/NetGuard"><img src="https://github.com/bernaferrari/NetGuard/raw/master/assets/more-light.png" alt="NetGuard" width="49%"></a>
+<a href="https://github.com/bernaferrari/markor"><img src="https://github.com/bernaferrari/markor/raw/main/assets/more.png" alt="Markor" width="49%"></a>
+<a href="https://github.com/bernaferrari/NetGuard"><img src="https://github.com/bernaferrari/NetGuard/raw/main/assets/more-light.png" alt="NetGuard" width="49%"></a>
 <a href="https://github.com/bernaferrari/SDKMonitor"><img src="https://raw.githubusercontent.com/bernaferrari/SDKMonitor/HEAD/assets/header.png" alt="SDKMonitor" width="49%"></a>
 <a href="https://github.com/bernaferrari/EmojiSlider"><img src="https://raw.githubusercontent.com/bernaferrari/EmojiSlider/HEAD/assets/header.png" alt="EmojiSlider" width="49%"></a>
 </div>
