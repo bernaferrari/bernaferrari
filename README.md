@@ -31,7 +31,7 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 * 📡 **[ChangeDetection](https://github.com/bernaferrari/ChangeDetection)** — Monitors website changes in the background.
 * 🧪 **[SDKMonitor](https://github.com/bernaferrari/SDKMonitor)** — Inspect target SDK versions from installed Android apps.
 * ✍️ **[markor](https://github.com/bernaferrari/markor)** — Material 3 Expressive redesign for a Markdown editor.
-* 🛡️ **[NetGuard](https://github.com/bernaferrari/NetGuard)** — Material 3 Expressive redesign for a network firewall app.
+* 🛡️ **[QuietGuard](https://github.com/bernaferrari/QuietGuard)** — Material 3 Expressive redesign for a network firewall app.
 * 🔒 **[rethink-app](https://github.com/bernaferrari/rethink-app)** — Material 3 Expressive redesign for a privacy and DNS firewall app.
 * 🧩 **[diagonal-wipe-icon](https://github.com/bernaferrari/diagonal-wipe-icon)** — Smooth animated icon transitions for Compose.
 
@@ -45,6 +45,7 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 ### Swift
 
 * 🧭 **[Default Opener](https://github.com/bernaferrari/default-opener)** — Take back control of default apps, file types, and URL schemes on macOS.
+* 🖼️ **[PNGSmith](https://github.com/bernaferrari/pngsmith)** — Shrink PNG files with maximum fidelity.
 
 ### Flutter
 
