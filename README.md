@@ -45,7 +45,7 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 ### Swift
 
 * 🧭 **[Default Opener](https://github.com/bernaferrari/default-opener)** — Take back control of default apps, file types, and URL schemes on macOS.
-* 🖼️ **[PNGSmith](https://github.com/bernaferrari/pngsmith)** — Shrink PNG files with maximum fidelity.
+* 🖼️ **[PNG Smith](https://github.com/bernaferrari/pngsmith)** — Shrink PNG files with maximum fidelity.
 
 ### Flutter
 
