@@ -23,7 +23,7 @@ Creator of FigmaToCode (5.1k★) · 31 merged contributions to Flutter · TypeSc
 
 <div align="center">
 <a href="https://github.com/bernaferrari/agent-board"><img src="https://raw.githubusercontent.com/bernaferrari/agent-board/HEAD/assets/opengraph-image.png" alt="agent-board" width="49%"></a>
-<a href="https://github.com/bernaferrari/GradleKotlinConverter"><img src="https://raw.githubusercontent.com/bernaferrari/GradleKotlinConverter/HEAD/assets/opengraph-image.png" alt="multi-diff" width="49%"></a>
+<a href="https://github.com/bernaferrari/GradleKotlinConverter"><img src="https://raw.githubusercontent.com/bernaferrari/GradleKotlinConverter/HEAD/assets/opengraph-image.png" alt="GradleKotlinConverter" width="49%"></a>
 </div>
 
 ### Android
@@ -51,5 +51,5 @@ Creator of FigmaToCode (5.1k★) · 31 merged contributions to Flutter · TypeSc
 
 * 🌈 **[Color Studio](https://github.com/bernaferrari/color-studio)** — Explore and generate color systems with a cleaner visual workflow.
 * 💸 **[Cash Balancer](https://github.com/bernaferrari/CashBalancer)** — Balance money across accounts and assets.
-* 🦋 **[Diagonal Wwipe Icon (Flutter)](https://github.com/bernaferrari/diagonal-wipe-icon-flutter)** — Smooth animated icon transitions for Flutter.
+* 🦋 **[Diagonal Wipe Icon (Flutter)](https://github.com/bernaferrari/diagonal-wipe-icon-flutter)** — Smooth animated icon transitions for Flutter.
 * 📐 **[non_uniform_border](https://github.com/bernaferrari/non_uniform_border)** — Flutter borders with different widths per side.
