@@ -1,8 +1,8 @@
 # Hey, I'm Bernardo 👋
 
-I build polished open-source tools for **design-to-code**, **mobile UI**, and **developer workflows**.
+I build open-source developer tools and UI systems where product quality, performance, and implementation detail all matter.
 
-Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, and small utilities that remove annoying manual work.
+Creator of FigmaToCode (5.1k★) · 31 merged contributions to Flutter · TypeScript, Kotlin/KMP, Flutter/Dart, Swift and Rust.
 
 [Website](https://bernaferrari.vercel.app) · [𝕏](https://x.com/bernaferrari) · [LinkedIn](https://www.linkedin.com/in/bernaferrari)
 
@@ -37,7 +37,7 @@ Mostly: Plugins, tools, AI, Android/KMP, Flutter, color systems, UI components, 
 
 <div align="center">
 <a href="https://github.com/bernaferrari/markor"><img src="https://github.com/bernaferrari/markor/raw/main/assets/more.png" alt="Markor" width="49%"></a>
-<a href="https://github.com/bernaferrari/NetGuard"><img src="https://github.com/bernaferrari/NetGuard/raw/main/assets/more-light.png" alt="NetGuard" width="49%"></a>
+<a href="https://github.com/bernaferrari/QuietGuard"><img src="https://github.com/bernaferrari/QuietGuard/raw/main/assets/more-light.png" alt="QuietGuard" width="49%"></a>
 <a href="https://github.com/bernaferrari/SDKMonitor"><img src="https://raw.githubusercontent.com/bernaferrari/SDKMonitor/HEAD/assets/header.png" alt="SDKMonitor" width="49%"></a>
 <a href="https://github.com/bernaferrari/EmojiSlider"><img src="https://raw.githubusercontent.com/bernaferrari/EmojiSlider/HEAD/assets/header.png" alt="EmojiSlider" width="49%"></a>
 </div>
