@@ -27,19 +27,17 @@ export default function HomePage() {
                 className="size-10 rounded-full border border-border bg-surface"
               />
               <p className="text-sm text-muted">
-                <span className="font-medium text-foreground">Bernardo Ferrari</span> · Design
-                engineer, Brazil
+                <span className="font-medium text-foreground">Bernardo Ferrari</span> · Brazil
               </p>
             </div>
 
-            <h1 className="mt-8 text-[2.5rem] leading-[1.05] font-medium tracking-[-0.035em] sm:text-6xl lg:text-[4rem]">
-              I build the tools between a design and the app that ships.
+            <h1 className="mt-8 text-[2.5rem] leading-[1.08] font-medium tracking-[-0.03em] sm:text-6xl lg:text-[4rem]">
+              I make apps, and the tools to build them.
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              Software for the web, Android, iOS and the desktop, designed with as much care as it
-              is engineered. My Figma plugin turns designs into real code for over 2 million people,
-              and I rebuild well-loved apps so they feel new.
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
+              My Figma plugin turns designs into code for over 2 million people. I also make apps
+              for Android, iOS, Mac and the web, and I care how they look as much as how they work.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">

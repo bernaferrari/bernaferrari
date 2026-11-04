@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Bernardo Ferrari, design engineer";
+export const alt = "Bernardo Ferrari";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -31,7 +31,7 @@ export default async function Image() {
           />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 30, fontWeight: 600 }}>Bernardo Ferrari</div>
-            <div style={{ fontSize: 24, color: "#9a9aa2" }}>Design engineer</div>
+            <div style={{ fontSize: 24, color: "#9a9aa2" }}>bernaferrari.com</div>
           </div>
         </div>
         <div
@@ -43,7 +43,7 @@ export default async function Image() {
             maxWidth: 980,
           }}
         >
-          I build the tools between a design and the app that ships.
+          I make apps, and the tools to build them.
         </div>
         <div style={{ display: "flex", gap: 40, fontSize: 24, color: "#9a9aa2" }}>
           <span>Figma to Code</span>

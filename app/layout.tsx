@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Bernardo Ferrari",
   },
   description:
-    "Design engineer. I build the tools between a design and the app that ships, like Figma to Code, used by over 2 million people.",
+    "I make apps, and the tools to build them, like Figma to Code, used by over 2 million people.",
   applicationName: "Bernardo Ferrari",
   authors: [{ name: "Bernardo Ferrari", url: "https://bernaferrari.com" }],
   creator: "Bernardo Ferrari",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Bernardo Ferrari",
     title: "Bernardo Ferrari",
     description:
-      "Design engineer. I build the tools between a design and the app that ships, like Figma to Code, used by over 2 million people.",
+      "I make apps, and the tools to build them, like Figma to Code, used by over 2 million people.",
     images: [
       {
         url: "/opengraph-image",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bernardo Ferrari",
     description:
-      "Design engineer. I build the tools between a design and the app that ships, like Figma to Code, used by over 2 million people.",
+      "I make apps, and the tools to build them, like Figma to Code, used by over 2 million people.",
     images: ["/opengraph-image"],
     creator: "@bernaferrari",
   },
