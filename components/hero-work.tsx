@@ -1,72 +1,68 @@
 import Image from "next/image";
 
+const reforge = "https://kotlin-reforge.vercel.app";
+
 /**
- * The first screen's picture: the flagship across the top, two apps below it, cropped
- * to their screens. Each tile opens its project.
+ * The first screen's picture: Google Play screenshots of the rebuilt apps, three staggered
+ * columns that fade out at the edges. Each one opens its app.
  */
-const tiles = [
+const columns = [
   {
-    href: "https://github.com/bernaferrari/FigmaToCode",
-    label: "Figma to Code",
-    src: "/work/figmatocode.png",
-    alt: "A Figma design flowing into Tailwind, HTML, Flutter, React and SwiftUI code",
-    width: 1672,
-    height: 941,
-    frame: "col-span-2 aspect-[40/21]",
-    position: "object-center",
-    zoom: "",
+    offset: "translate-y-10",
+    cards: [
+      { src: "calcula-flick", app: "Calcula", slug: "calcula" },
+      { src: "changedetection", app: "ChangeDetection", slug: "changedetection" },
+    ],
   },
   {
-    href: "https://kotlin-reforge.vercel.app/#calcula",
-    label: "Calcula, from Kotlin Reforge",
-    src: "/work/calcula.webp",
-    alt: "Calcula's calculator, graph and unit converter",
-    width: 2400,
-    height: 1260,
-    frame: "aspect-square",
-    position: "object-center",
-    zoom: "scale-[1.7] origin-[50%_88%]",
+    offset: "-translate-y-6",
+    cards: [
+      { src: "keepout", app: "Keepout", slug: "keepout" },
+      { src: "wordkeep", app: "Wordkeep", slug: "wordkeep" },
+    ],
   },
   {
-    href: "https://kotlin-reforge.vercel.app/#wifi-weakspot",
-    label: "WiFi Weakspot, from Kotlin Reforge",
-    src: "/work/wifi-weakspot.webp",
-    alt: "WiFi Weakspot charting nearby networks by channel",
-    width: 2400,
-    height: 1260,
-    frame: "aspect-square",
-    position: "object-left",
-    zoom: "scale-[1.65] origin-[12%_100%]",
+    offset: "translate-y-24",
+    cards: [
+      { src: "quietguard", app: "QuietGuard", slug: "quietguard" },
+      { src: "calcula-graph", app: "Calcula", slug: "calcula" },
+    ],
   },
 ];
 
 export function HeroWork() {
   return (
-    <div className="hidden grid-cols-2 gap-3 lg:grid">
-      {tiles.map((tile, index) => (
-        <a
-          key={tile.src}
-          href={tile.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={tile.label}
-          className={`rise group relative overflow-hidden rounded-xl border border-border bg-surface ${tile.frame}`}
-          style={{ animationDelay: `${80 + index * 70}ms` }}
-        >
-          <Image
-            src={tile.src}
-            alt={tile.alt}
-            width={tile.width}
-            height={tile.height}
-            priority
-            sizes={index === 0 ? "560px" : "480px"}
-            className={`h-full w-full object-cover ${tile.position} ${tile.zoom}`}
-          />
-          <span className="pointer-events-none absolute bottom-2.5 left-2.5 rounded-full bg-black/55 px-2.5 py-1 text-xs font-medium text-white opacity-0 backdrop-blur transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
-            {tile.label}
-          </span>
-        </a>
-      ))}
+    <div
+      aria-label="Apps from Kotlin Reforge"
+      className="relative hidden h-[34rem] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_85%,transparent)] lg:block"
+    >
+      <div className="grid grid-cols-3 gap-3">
+        {columns.map((column, c) => (
+          <div key={c} className={`flex flex-col gap-3 ${column.offset}`}>
+            {column.cards.map((card, i) => (
+              <a
+                key={card.src}
+                href={`${reforge}/#${card.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${card.app}, from Kotlin Reforge`}
+                className="rise block overflow-hidden rounded-[14px] border border-black/5 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.45)] transition-transform duration-300 ease-out hover:-translate-y-1 dark:border-white/10"
+                style={{ animationDelay: `${60 + (c * 2 + i) * 60}ms` }}
+              >
+                <Image
+                  src={`/work/store/${card.src}.webp`}
+                  alt={`${card.app}'s Google Play screenshot`}
+                  width={720}
+                  height={1280}
+                  priority={i === 0}
+                  sizes="180px"
+                  className="h-auto w-full"
+                />
+              </a>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
