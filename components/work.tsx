@@ -78,34 +78,48 @@ export function FeatureCard({ feature, priority }: { feature: Feature; priority?
   );
 }
 
-/** One project per row: name, what it does, and a note on the right. */
-export function ProjectList({ projects }: { projects: Project[] }) {
+function track(name: string, url: string) {
+  posthog.capture("project_clicked", { project_title: name, project_url: url });
+}
+
+/** A smaller project with a picture: three to a row on wide screens. */
+export function ProjectTiles({ projects }: { projects: Project[] }) {
   return (
-    <ul className="divide-y divide-border border-b border-border -mt-4">
+    <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
         <li key={project.name}>
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() =>
-              posthog.capture("project_clicked", {
-                project_title: project.name,
-                project_url: project.url,
-              })
-            }
-            className="group grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-6 gap-y-1 py-4 sm:grid-cols-[13rem_minmax(0,1fr)_auto]"
+            onClick={() => track(project.name, project.url)}
+            className="group block"
           >
-            <span className="flex items-center gap-1.5 font-medium">
-              {project.name}
-              <Arrow className="text-faint opacity-0 transition-opacity duration-150 group-hover:opacity-100" />
-            </span>
-            <span className="col-span-2 row-start-2 text-[15px] text-muted sm:col-span-1 sm:row-start-auto">
-              {project.summary}
-            </span>
-            <span className="col-start-2 row-start-1 font-mono text-xs text-faint tabular-nums sm:col-start-auto sm:row-start-auto">
-              {project.note}
-            </span>
+            {project.image ? (
+              <div
+                className="relative aspect-[40/21] overflow-hidden rounded-lg border border-border bg-surface transition-[border-color] duration-200 group-hover:border-border-strong"
+                style={
+                  project.image.background ? { background: project.image.background } : undefined
+                }
+              >
+                <Image
+                  src={project.image.src}
+                  alt={project.image.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                  unoptimized={project.image.src.endsWith(".webp")}
+                  className={project.image.contain ? "object-contain px-4" : "object-cover"}
+                />
+              </div>
+            ) : null}
+            <div className="mt-4 flex items-baseline justify-between gap-3">
+              <h3 className="flex items-center gap-1.5 font-medium">
+                {project.name}
+                <Arrow className="text-faint transition-[transform,color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
+              </h3>
+              <span className="shrink-0 text-xs text-faint tabular-nums">{project.note}</span>
+            </div>
+            <p className="mt-1 text-sm leading-relaxed text-muted">{project.summary}</p>
           </a>
         </li>
       ))}
@@ -113,11 +127,40 @@ export function ProjectList({ projects }: { projects: Project[] }) {
   );
 }
 
-export function ResearchList({ publications }: { publications: Publication[] }) {
+/** A project without a picture: a small card with its name, note and one line. */
+export function ProjectCards({ projects }: { projects: Project[] }) {
   return (
-    <ul className="divide-y divide-border border-b border-border -mt-4">
+    <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => (
+        <li key={project.name} className="flex">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track(project.name, project.url)}
+            className="group flex w-full flex-col rounded-lg border border-border p-5 transition-[border-color,background-color] duration-200 hover:border-border-strong hover:bg-surface"
+          >
+            <div className="flex items-baseline justify-between gap-3">
+              <h3 className="flex items-center gap-1.5 font-medium">
+                {project.name}
+                <Arrow className="text-faint transition-[transform,color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
+              </h3>
+              <span className="shrink-0 text-xs text-faint tabular-nums">{project.note}</span>
+            </div>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted">{project.summary}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** A paper: where and when on top, the title, then how often it is cited. */
+export function PaperCards({ publications }: { publications: Publication[] }) {
+  return (
+    <ul className="grid gap-3 md:grid-cols-2">
       {publications.map((paper) => (
-        <li key={paper.title}>
+        <li key={paper.title} className="flex">
           <a
             href={paper.url}
             target="_blank"
@@ -128,17 +171,18 @@ export function ResearchList({ publications }: { publications: Publication[] }) 
                 publication_url: paper.url,
               })
             }
-            className="group grid gap-x-6 gap-y-1 py-4 sm:grid-cols-[minmax(0,1fr)_auto]"
+            className="group flex w-full flex-col justify-between gap-8 rounded-lg border border-border p-6 transition-[border-color,background-color] duration-200 hover:border-border-strong hover:bg-surface"
           >
-            <span className="font-medium leading-snug transition-colors group-hover:text-foreground">
-              {paper.title}
-            </span>
-            <span className="font-mono text-xs text-faint tabular-nums sm:pt-1 sm:text-right">
-              {paper.citations} citations
-            </span>
-            <span className="text-sm text-muted">
-              {paper.venue}, {paper.year}
-            </span>
+            <div>
+              <p className="text-sm text-faint">
+                {paper.year} · {paper.venue}
+              </p>
+              <h3 className="mt-3 text-lg leading-snug font-medium tracking-tight">{paper.title}</h3>
+            </div>
+            <p className="flex items-center gap-1.5 text-sm text-muted">
+              Cited by {paper.citations}
+              <Arrow className="text-faint transition-[transform,color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
+            </p>
           </a>
         </li>
       ))}

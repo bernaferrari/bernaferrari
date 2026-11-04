@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FeatureCard, ProjectList, ResearchList, SectionHeading, Arrow } from "@/components/work";
+import { FeatureCard, PaperCards, ProjectTiles, SectionHeading, Arrow } from "@/components/work";
 import { features, highlights, links } from "@/lib/work";
 import { publications } from "@/lib/publications";
 
@@ -86,7 +86,7 @@ export default function HomePage() {
             See all
           </Link>
         </SectionHeading>
-        <ProjectList projects={highlights} />
+        <ProjectTiles projects={highlights} />
       </section>
 
       <section aria-labelledby="research" className="pb-20 sm:pb-28">
@@ -100,7 +100,7 @@ export default function HomePage() {
             Google Scholar
           </a>
         </SectionHeading>
-        <ResearchList publications={publications} />
+        <PaperCards publications={publications} />
       </section>
 
       <section aria-labelledby="contact" className="pb-8">

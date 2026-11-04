@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { FeatureCard, ProjectList, SectionHeading } from "@/components/work";
+import { FeatureCard, ProjectCards, ProjectTiles, SectionHeading } from "@/components/work";
 import { features, highlights, links, others } from "@/lib/work";
 
 export const metadata: Metadata = {
@@ -27,6 +27,10 @@ export default function ProjectsPage() {
       </section>
 
       <section aria-labelledby="all" className="pb-8">
+        <SectionHeading id="more" title="More" />
+        <div className="pb-20 sm:pb-24">
+          <ProjectTiles projects={highlights} />
+        </div>
         <SectionHeading id="all" title="Everything else">
           <a
             href={`${links.github}?tab=repositories`}
@@ -37,7 +41,7 @@ export default function ProjectsPage() {
             All repositories on GitHub
           </a>
         </SectionHeading>
-        <ProjectList projects={[...highlights, ...others]} />
+        <ProjectCards projects={others} />
       </section>
     </div>
   );

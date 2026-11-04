@@ -49,7 +49,6 @@ export default async function Image() {
           <span>Figma to Code</span>
           <span>Kotlin Reforge</span>
           <span>Screenshot Studio</span>
-          <span>KMPwright</span>
           <span>rport</span>
         </div>
       </div>

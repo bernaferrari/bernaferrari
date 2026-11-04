@@ -22,6 +22,8 @@ export interface Project {
   url: string;
   /** Stars, or a word like "macOS" when stars say little. */
   note: string;
+  /** Shown on the home page's smaller cards. */
+  image?: Feature["image"];
 }
 
 export const features: Feature[] = [
@@ -59,14 +61,14 @@ export const features: Feature[] = [
     },
   },
   {
-    name: "KMPwright",
+    name: "GradleKotlinConverter",
     summary:
-      "Browser automation for Kotlin Multiplatform. One script drives Android WebView, iOS WKWebView or Chromium, or an AI agent.",
-    url: "https://kmpwright.vercel.app",
-    meta: ["Kotlin Multiplatform", "Library"],
+      "Paste a Groovy Gradle build file, get the Kotlin DSL version. The tool Android developers reach for when they migrate.",
+    url: "https://gradle-kotlin-converter.vercel.app",
+    meta: ["Web", "TypeScript", "943 stars"],
     image: {
-      src: "/work/kmpwright.webp",
-      alt: "Six lines of Kotlin filling in and submitting a sign-up form",
+      src: "/work/gradle.png",
+      alt: "The Gradle elephant turning into the Kotlin logo",
     },
   },
   {
@@ -95,26 +97,62 @@ export const features: Feature[] = [
   },
 ];
 
-/** The shortlist on the home page. */
+/** The smaller cards on the home page. */
 export const highlights: Project[] = [
   {
-    name: "GradleKotlinConverter",
-    summary: "Converts Gradle build files from Groovy to the Kotlin DSL.",
-    url: "https://gradle-kotlin-converter.vercel.app",
-    note: "943 ★",
+    name: "EmojiSlider",
+    summary: "An Android slider full of emoji, made to be customized.",
+    url: "https://github.com/bernaferrari/EmojiSlider",
+    note: "617 ★",
+    image: { src: "/work/emojislider.png", alt: "A slider whose thumb is a heart-eyes emoji" },
   },
   {
     name: "ChangeDetection",
     summary: "Watches websites in the background and shows what changed.",
     url: "https://github.com/bernaferrari/ChangeDetection",
     note: "746 ★",
+    image: {
+      src: "/work/changedetection.jpg",
+      alt: "ChangeDetection highlighting what changed on a watched page",
+    },
   },
   {
-    name: "EmojiSlider",
-    summary: "An Android slider full of emoji, made to be customized.",
-    url: "https://github.com/bernaferrari/EmojiSlider",
-    note: "617 ★",
+    name: "Multi Diff",
+    summary: "Compare several diff files side by side.",
+    url: "https://multi-diff.vercel.app",
+    note: "Web",
+    image: { src: "/work/multidiff.png", alt: "Three diffs lined up side by side" },
   },
+  {
+    name: "SDKMonitor",
+    summary: "Shows which Android version each installed app targets.",
+    url: "https://sdkmonitor.vercel.app",
+    note: "301 ★",
+    image: { src: "/work/sdkmonitor.jpg", alt: "SDKMonitor listing installed apps and their target SDK" },
+  },
+  {
+    name: "Diagonal Wipe Icon",
+    summary: "iPhone-style icon transitions in one file, for Compose and Flutter.",
+    url: "https://bernaferrari.github.io/diagonal-wipe-icon/",
+    note: "Library",
+    image: {
+      src: "/work/diagonal-wipe-icon.webp",
+      alt: "Icons switching with a diagonal wipe",
+      contain: true,
+      background: "#fcf3f2",
+    },
+  },
+  {
+    name: "RegexLearner",
+    summary: "A journey through regular expressions. Swift Student Challenge winner.",
+    url: "https://github.com/bernaferrari/RegexLearner",
+    note: "WWDC20",
+    image: { src: "/work/regexlearner.png", alt: "Apple's WWDC20 Swift Student Challenge page" },
+  },
+];
+
+/** Everything else worth a look, on /projects. */
+export const others: Project[] = [
   {
     name: "Color Studio",
     summary: "Build coherent, accessible color themes with the right colors.",
@@ -122,25 +160,9 @@ export const highlights: Project[] = [
     note: "440 ★",
   },
   {
-    name: "SDKMonitor",
-    summary: "Shows which Android version each installed app targets.",
-    url: "https://sdkmonitor.vercel.app",
-    note: "301 ★",
-  },
-  {
-    name: "RegexLearner",
-    summary: "A journey through regular expressions. Swift Student Challenge winner.",
-    url: "https://github.com/bernaferrari/RegexLearner",
-    note: "WWDC20",
-  },
-];
-
-/** Everything else worth a look, on /projects. */
-export const others: Project[] = [
-  {
-    name: "Diagonal Wipe Icon",
-    summary: "iPhone-style icon transitions in one file, for Compose and Flutter.",
-    url: "https://bernaferrari.github.io/diagonal-wipe-icon/",
+    name: "KMPwright",
+    summary: "Browser automation for Kotlin Multiplatform: Android, iOS and Chromium.",
+    url: "https://kmpwright.vercel.app",
     note: "Library",
   },
   {
@@ -166,12 +188,6 @@ export const others: Project[] = [
     summary: "HSLuv for Dart, a human-friendly alternative to HSL.",
     url: "https://github.com/bernaferrari/hsluv-dart",
     note: "53 ★",
-  },
-  {
-    name: "multi-diff",
-    summary: "Compare several diff files side by side.",
-    url: "https://multi-diff.vercel.app",
-    note: "Web",
   },
   {
     name: "text-to-files",
