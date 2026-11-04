@@ -1,57 +1,72 @@
 import Image from "next/image";
 
-/** Three real screens from three platforms, overlapping like work spread on a desk. */
-const screens = [
+/**
+ * The first screen's picture: the flagship across the top, two apps below it, cropped
+ * to their screens. Each tile opens its project.
+ */
+const tiles = [
   {
-    src: "/work/kotlin-reforge-before-after.webp",
-    alt: "Rethink redesigned as Keepout, from Kotlin Reforge",
+    href: "https://github.com/bernaferrari/FigmaToCode",
+    label: "Figma to Code",
+    src: "/work/figmatocode.png",
+    alt: "A Figma design flowing into Tailwind, HTML, Flutter, React and SwiftUI code",
+    width: 1672,
+    height: 941,
+    frame: "col-span-2 aspect-[40/21]",
+    position: "object-center",
+    zoom: "",
+  },
+  {
+    href: "https://kotlin-reforge.vercel.app/#calcula",
+    label: "Calcula, from Kotlin Reforge",
+    src: "/work/calcula.webp",
+    alt: "Calcula's calculator, graph and unit converter",
     width: 2400,
     height: 1260,
-    className: "top-0 right-0 w-[88%]",
-    delay: 60,
+    frame: "aspect-square",
+    position: "object-center",
+    zoom: "scale-[1.7] origin-[50%_88%]",
   },
   {
-    src: "/work/pngsmith-app.webp",
-    alt: "PNGSmith, a macOS app, making an image 84% smaller",
-    width: 2160,
-    height: 1480,
-    className: "top-[38%] left-0 w-[64%]",
-    delay: 140,
-  },
-  {
-    src: "/work/gradle-web.jpg",
-    alt: "GradleKotlinConverter turning a Groovy build file into Kotlin",
-    width: 2476,
-    height: 2056,
-    className: "right-[2%] bottom-0 w-[46%] aspect-[4/3]",
-    delay: 220,
+    href: "https://kotlin-reforge.vercel.app/#wifi-weakspot",
+    label: "WiFi Weakspot, from Kotlin Reforge",
+    src: "/work/wifi-weakspot.webp",
+    alt: "WiFi Weakspot charting nearby networks by channel",
+    width: 2400,
+    height: 1260,
+    frame: "aspect-square",
+    position: "object-left",
+    zoom: "scale-[1.65] origin-[12%_100%]",
   },
 ];
 
 export function HeroWork() {
   return (
-    <a
-      href="#work"
-      aria-label="See selected work"
-      className="relative hidden aspect-[1/0.92] lg:block"
-    >
-      {screens.map((screen) => (
-        <div
-          key={screen.src}
-          className={`rise absolute overflow-hidden rounded-xl border border-black/10 bg-surface shadow-[0_24px_60px_-28px_rgba(0,0,0,0.55)] dark:border-white/10 ${screen.className}`}
-          style={{ animationDelay: `${screen.delay}ms` }}
+    <div className="hidden grid-cols-2 gap-3 lg:grid">
+      {tiles.map((tile, index) => (
+        <a
+          key={tile.src}
+          href={tile.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={tile.label}
+          className={`rise group relative overflow-hidden rounded-xl border border-border bg-surface ${tile.frame}`}
+          style={{ animationDelay: `${80 + index * 70}ms` }}
         >
           <Image
-            src={screen.src}
-            alt={screen.alt}
-            width={screen.width}
-            height={screen.height}
+            src={tile.src}
+            alt={tile.alt}
+            width={tile.width}
+            height={tile.height}
             priority
-            sizes="460px"
-            className="h-full w-full object-cover object-top"
+            sizes={index === 0 ? "560px" : "480px"}
+            className={`h-full w-full object-cover ${tile.position} ${tile.zoom}`}
           />
-        </div>
+          <span className="pointer-events-none absolute bottom-2.5 left-2.5 rounded-full bg-black/55 px-2.5 py-1 text-xs font-medium text-white opacity-0 backdrop-blur transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+            {tile.label}
+          </span>
+        </a>
       ))}
-    </a>
+    </div>
   );
 }
