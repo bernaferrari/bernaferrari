@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FeatureCard, PaperCards, ProjectTiles, SectionHeading, Arrow } from "@/components/work";
+import { HeroWork } from "@/components/hero-work";
 import { features, highlights, links } from "@/lib/work";
 import { publications } from "@/lib/publications";
 
@@ -12,52 +13,61 @@ const proof = [
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-6xl px-6">
-      {/* Who, what, and why believe it: all on the first screen. */}
-      <section className="rise pt-14 pb-16 sm:pt-20 sm:pb-20">
-        <div className="flex items-center gap-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://github.com/bernaferrari.png"
-            alt=""
-            width={40}
-            height={40}
-            className="size-10 rounded-full border border-border bg-surface"
-          />
-          <p className="text-sm text-muted">
-            <span className="font-medium text-foreground">Bernardo Ferrari</span> · Design
-            engineer, Brazil
-          </p>
+      {/* Who, what, and why believe it, with the work itself in view: all on the first screen. */}
+      <section className="pt-14 pb-16 sm:pt-20 sm:pb-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.92fr)] lg:gap-14">
+          <div className="rise">
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://github.com/bernaferrari.png"
+                alt=""
+                width={40}
+                height={40}
+                className="size-10 rounded-full border border-border bg-surface"
+              />
+              <p className="text-sm text-muted">
+                <span className="font-medium text-foreground">Bernardo Ferrari</span> · Design
+                engineer, Brazil
+              </p>
+            </div>
+
+            <h1 className="mt-8 text-[2.5rem] leading-[1.05] font-medium tracking-[-0.035em] sm:text-6xl lg:text-[4rem]">
+              I build the tools between a design and the app that ships.
+            </h1>
+
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+              Software for the web, Android, iOS and the desktop, designed with as much care as it
+              is engineered. My Figma plugin turns designs into real code for over 2 million people,
+              and I rebuild well-loved apps so they feel new.
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a
+                href={`mailto:${links.email}`}
+                className="inline-flex h-10 items-center rounded-full bg-foreground px-5 text-sm font-medium text-background transition-opacity duration-150 hover:opacity-85"
+              >
+                Get in touch
+              </a>
+              <a
+                href={links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 items-center gap-1.5 rounded-full border border-border px-5 text-sm font-medium transition-colors duration-150 hover:border-border-strong"
+              >
+                GitHub
+                <Arrow className="text-faint" />
+              </a>
+            </div>
+          </div>
+
+          <HeroWork />
         </div>
 
-        <h1 className="mt-8 max-w-4xl text-[2.5rem] leading-[1.05] font-medium tracking-[-0.035em] sm:text-6xl lg:text-7xl">
-          I build the tools between a design and the app that ships.
-        </h1>
-
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-          Software for the web, Android, iOS and the desktop, designed with as much care as it is
-          engineered. My Figma plugin turns designs into real code for over 2 million people, and I
-          rebuild well-loved apps so they feel new.
-        </p>
-
-        <div className="mt-9 flex flex-wrap items-center gap-3">
-          <a
-            href={`mailto:${links.email}`}
-            className="inline-flex h-10 items-center rounded-full bg-foreground px-5 text-sm font-medium text-background transition-opacity duration-150 hover:opacity-85"
-          >
-            Get in touch
-          </a>
-          <a
-            href={links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-10 items-center gap-1.5 rounded-full border border-border px-5 text-sm font-medium transition-colors duration-150 hover:border-border-strong"
-          >
-            GitHub
-            <Arrow className="text-faint" />
-          </a>
-        </div>
-
-        <dl className="mt-14 grid max-w-3xl grid-cols-1 gap-6 border-t border-border pt-6 sm:grid-cols-3">
+        <dl
+          className="rise mt-14 grid grid-cols-1 gap-6 border-t border-border pt-6 sm:grid-cols-3 lg:mt-20"
+          style={{ animationDelay: "120ms" }}
+        >
           {proof.map((item) => (
             <div key={item.label}>
               <dt className="sr-only">{item.label}</dt>

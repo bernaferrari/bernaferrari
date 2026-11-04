@@ -6,13 +6,19 @@ export interface Feature {
   url: string;
   /** Short facts in a quiet line under the summary. */
   meta: string[];
+  /** The real product, shown inside the same frame as every other feature. */
   image: {
     src: string;
     alt: string;
     /** contain: show the whole picture on `background`; otherwise it fills the frame. */
     contain?: boolean;
     background?: string;
+    /** The picture's own size, so the frame can lay it out before it loads. */
+    width?: number;
+    height?: number;
   };
+  /** Draw this instead of the picture: rport shows its real code beside the plot it made. */
+  preview?: "rport";
 }
 
 /** A project in the plain list: one line each. */
@@ -37,6 +43,8 @@ export const features: Feature[] = [
     meta: ["Figma plugin", "2M+ users", "5.2k stars"],
     image: {
       src: "/work/figmatocode.png",
+      width: 1672,
+      height: 941,
       alt: "A Figma dashboard design flowing into Tailwind, HTML, Flutter, React and SwiftUI code",
     },
   },
@@ -47,8 +55,10 @@ export const features: Feature[] = [
     url: "https://kotlin-reforge.vercel.app",
     meta: ["Android", "Kotlin Multiplatform", "8 apps"],
     image: {
-      src: "/work/kotlin-reforge.png",
-      alt: "QuietGuard, Calcula, Keepout and ChangeDetection, four of the rebuilt apps",
+      src: "/work/kotlin-reforge-before-after.webp",
+      width: 2400,
+      height: 1260,
+      alt: "Rethink's home and app list beside the same screens redesigned as Keepout",
     },
   },
   {
@@ -58,7 +68,9 @@ export const features: Feature[] = [
     url: "https://github.com/bernaferrari/screenshot-studio",
     meta: ["TypeScript", "Built for AI agents"],
     image: {
-      src: "/work/screenshot-studio.webp",
+      src: "/work/screenshot-studio-before-after.jpg",
+      width: 2400,
+      height: 1420,
       alt: "Plain screenshots of Calcula made into a store-ready set, and the same set in German, Chinese and Japanese",
     },
   },
@@ -69,8 +81,10 @@ export const features: Feature[] = [
     url: "https://gradle-kotlin-converter.vercel.app",
     meta: ["Web", "TypeScript", "943 stars"],
     image: {
-      src: "/work/gradle.png",
-      alt: "The Gradle elephant turning into the Kotlin logo",
+      src: "/work/gradle-web.jpg",
+      width: 2476,
+      height: 2056,
+      alt: "A Groovy build file on the left and its Kotlin DSL version on the right",
     },
   },
   {
@@ -80,8 +94,10 @@ export const features: Feature[] = [
     url: "https://github.com/bernaferrari/PNGSmith",
     meta: ["macOS", "Swift"],
     image: {
-      src: "/work/pngsmith.png",
-      alt: "A landscape photo dissolving into a grid of fewer colors",
+      src: "/work/pngsmith-app.webp",
+      width: 2160,
+      height: 1480,
+      alt: "PNGSmith reducing an image to 39 colors, 84% smaller",
     },
   },
   {
@@ -92,10 +108,11 @@ export const features: Feature[] = [
     meta: ["Rust", "Language runtime"],
     image: {
       src: "/work/rport-dark.png",
+      width: 800,
+      height: 600,
       alt: "A smoothed curve through noisy points, plotted by R code running on rport",
-      contain: true,
-      background: "#1b1f1e",
     },
+    preview: "rport",
   },
 ];
 

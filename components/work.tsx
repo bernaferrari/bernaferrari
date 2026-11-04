@@ -41,31 +41,84 @@ export function SectionHeading({
   );
 }
 
-/** A big project: its picture, then the name, what it does, and a few facts. */
+/** The real R code behind rport's plot, beside the plot it drew. */
+const rportCode = [
+  ["# A curve hiding in the noise", "comment"],
+  ["set.seed(42)", ""],
+  ["x <- seq(0, 10, length.out = 80)", ""],
+  ["y <- sin(x) + rnorm(80, sd = 0.22)", ""],
+  ["fit <- loess(y ~ x, span = 0.3)", ""],
+  ["", ""],
+  ["plot(x, y, pch = 16, cex = 0.7)", ""],
+  ['lines(x, predict(fit), col = "#cc5636")', ""],
+] as const;
+
+function RportPreview() {
+  return (
+    <div className="absolute inset-x-[6%] top-[9%] bottom-0 grid grid-cols-[1.3fr_1fr] overflow-hidden rounded-t-lg border border-b-0 border-black/10 bg-[#1b1f1e] shadow-[0_12px_40px_-16px_rgba(0,0,0,0.45)] dark:border-white/10">
+      <div
+        aria-hidden
+        className="overflow-hidden border-r border-white/10 px-[5%] py-[6%] font-mono text-[1.6cqw] leading-[1.75] whitespace-pre text-[#d6dcd8]"
+      >
+        <div>
+          {rportCode.map(([line, kind], i) => (
+            <span key={i} className={`block ${kind === "comment" ? "text-[#7c8a83]" : ""}`}>
+              {line || " "}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="relative">
+        <Image
+          src="/work/rport-dark.png"
+          alt="The smoothed curve that code draws, plotted by rport"
+          fill
+          sizes="300px"
+          className="object-contain p-[4%]"
+        />
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Every big project gets the same frame: a quiet stage with the real product set into it,
+ * coming in from the top and running off the bottom edge.
+ */
+function FeatureFrame({ feature, priority }: { feature: Feature; priority?: boolean }) {
+  const { image } = feature;
+  return (
+    <div className="@container relative aspect-[40/21] overflow-hidden rounded-xl border border-border bg-surface transition-[border-color] duration-200 group-hover:border-border-strong">
+      {feature.preview === "rport" ? (
+        <RportPreview />
+      ) : (
+        <div className="absolute inset-x-[6%] top-[9%] transition-transform duration-300 ease-out group-hover:-translate-y-1">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={image.width ?? 1600}
+            height={image.height ?? 1000}
+            priority={priority}
+            sizes="(max-width: 768px) 90vw, 500px"
+            className="h-auto w-full rounded-t-lg border border-black/10 shadow-[0_12px_40px_-16px_rgba(0,0,0,0.45)] dark:border-white/10"
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** A big project: its framed product, then the name, what it does, and a few facts. */
 export function FeatureCard({ feature, priority }: { feature: Feature; priority?: boolean }) {
   return (
     <a
       href={feature.url}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() =>
-        posthog.capture("project_clicked", { project_title: feature.name, project_url: feature.url })
-      }
+      onClick={() => track(feature.name, feature.url)}
       className="group block"
     >
-      <div
-        className="relative aspect-[40/21] overflow-hidden rounded-xl border border-border bg-surface transition-[border-color] duration-200 group-hover:border-border-strong"
-        style={feature.image.background ? { background: feature.image.background } : undefined}
-      >
-        <Image
-          src={feature.image.src}
-          alt={feature.image.alt}
-          fill
-          priority={priority}
-          sizes="(max-width: 768px) 100vw, 560px"
-          className={feature.image.contain ? "object-contain" : "object-cover"}
-        />
-      </div>
+      <FeatureFrame feature={feature} priority={priority} />
       <div className="mt-5 flex items-center gap-1.5">
         <h3 className="text-lg font-medium tracking-tight">{feature.name}</h3>
         <Arrow className="text-faint transition-[transform,color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
