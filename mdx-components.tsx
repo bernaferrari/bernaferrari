@@ -12,49 +12,49 @@ type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 const components = {
   h1: (props: HeadingProps) => (
-    <h1 className="font-bold pt-12 mb-4 text-3xl gradient-text" {...props} />
+    <h1 className="pt-6 mb-2 text-4xl font-medium tracking-[-0.03em]" {...props} />
   ),
   h2: (props: HeadingProps) => (
     <h2
-      className="text-gray-800 dark:text-zinc-100 font-semibold text-xl mt-10 mb-4"
+      className="font-medium text-2xl tracking-tight pt-6"
       {...props}
     />
   ),
   h3: (props: HeadingProps) => (
     <h3
-      className="text-gray-800 dark:text-zinc-200 font-semibold mt-8 mb-3"
+      className="font-medium text-lg pt-4"
       {...props}
     />
   ),
   h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
   p: (props: ParagraphProps) => (
     <p
-      className="text-gray-700 dark:text-zinc-300 leading-relaxed"
+      className="text-[17px] leading-[1.75] text-foreground/85"
       {...props}
     />
   ),
   ol: (props: ListProps) => (
-    <ol className="numbered-list text-gray-700 dark:text-zinc-300" {...props} />
+    <ol className="numbered-list text-[17px] text-foreground/85" {...props} />
   ),
   ul: (props: ListProps) => (
     <ul
-      className="text-gray-700 dark:text-zinc-300 list-disc pl-5 space-y-2 marker:text-purple-400"
+      className="text-[17px] text-foreground/85 list-disc pl-5 space-y-2 marker:text-faint"
       {...props}
     />
   ),
   li: (props: ListItemProps) => <li className="leading-relaxed" {...props} />,
   em: (props: ComponentPropsWithoutRef<"em">) => (
-    <em className="italic text-purple-600 dark:text-purple-400" {...props} />
+    <em className="italic" {...props} />
   ),
   strong: (props: ComponentPropsWithoutRef<"strong">) => (
     <strong
-      className="font-semibold text-gray-900 dark:text-white"
+      className="font-semibold text-foreground"
       {...props}
     />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
     const className =
-      "text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 link-underline font-medium";
+      "font-medium underline decoration-border-strong underline-offset-4 transition-colors hover:decoration-foreground";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
@@ -89,7 +89,7 @@ const components = {
     if (isInline) {
       return (
         <code
-          className="px-1.5 py-0.5 rounded-md bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-mono"
+          className="rounded-md bg-surface px-1.5 py-0.5 font-mono text-[0.85em]"
           {...props}
         >
           {children}
@@ -106,27 +106,27 @@ const components = {
     );
   },
   Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
-    <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-zinc-800 my-6">
+    <div className="my-6 overflow-x-auto rounded-lg border border-border">
       <table className="min-w-full">
-        <thead className="bg-gray-50 dark:bg-zinc-900">
+        <thead className="bg-surface">
           <tr>
             {data.headers.map((header, index) => (
               <th
                 key={index}
-                className="px-4 py-3 text-left text-sm font-medium text-gray-900 dark:text-zinc-100"
+                className="px-4 py-3 text-left text-sm font-medium"
               >
                 {header}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200 dark:divide-zinc-800">
+        <tbody className="divide-y divide-border">
           {data.rows.map((row, index) => (
             <tr key={index}>
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="px-4 py-3 text-sm text-gray-700 dark:text-zinc-300"
+                  className="px-4 py-3 text-sm text-muted"
                 >
                   {cell}
                 </td>
@@ -139,7 +139,7 @@ const components = {
   ),
   blockquote: (props: BlockquoteProps) => (
     <blockquote
-      className="my-6 pl-4 border-l-4 border-purple-500 dark:border-purple-400 text-gray-600 dark:text-zinc-400 italic bg-purple-50/50 dark:bg-purple-900/10 py-3 pr-4 rounded-r-lg"
+      className="my-6 border-l-2 border-border-strong pl-5 text-muted"
       {...props}
     />
   ),

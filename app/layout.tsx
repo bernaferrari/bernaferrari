@@ -1,13 +1,14 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { Footer } from "@/components/social-links";
+import { SiteFooter } from "@/components/site-footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { Header } from "@/components/header";
+import { SiteHeader } from "@/components/site-header";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bernaferrari.com"),
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Bernardo Ferrari",
   },
   description:
-    "I build open source tools and experiments at the intersection of design and engineering.",
+    "Design engineer. I build the tools between a design and the app that ships, like Figma to Code, used by over 2 million people.",
   applicationName: "Bernardo Ferrari",
   authors: [{ name: "Bernardo Ferrari", url: "https://bernaferrari.com" }],
   creator: "Bernardo Ferrari",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Bernardo Ferrari",
     title: "Bernardo Ferrari",
     description:
-      "I build open source tools and experiments at the intersection of design and engineering.",
+      "Design engineer. I build the tools between a design and the app that ships, like Figma to Code, used by over 2 million people.",
     images: [
       {
         url: "/opengraph-image",
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Bernardo Ferrari",
     description:
-      "I build open source tools and experiments at the intersection of design and engineering.",
+      "Design engineer. I build the tools between a design and the app that ships, like Figma to Code, used by over 2 million people.",
     images: ["/opengraph-image"],
     creator: "@bernaferrari",
   },
@@ -71,24 +72,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className}`} suppressHydrationWarning>
-      <body className="antialiased tracking-tight">
+    <html
+      lang="en"
+      className={`${geist.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen flex flex-col justify-between bg-background text-foreground transition-colors">
-            <Header />
-            <main className="max-w-2xl mx-auto w-full px-8 pt-28 pb-8 flex-1">
-              {children}
-            </main>
-            <div className="px-8 pb-8 max-w-2xl mx-auto w-full">
-              <Footer />
-            </div>
-            <Analytics />
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
           </div>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

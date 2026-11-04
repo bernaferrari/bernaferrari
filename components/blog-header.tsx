@@ -24,9 +24,9 @@ export function BlogHeader() {
   return (
     <>
       {/* Progress bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200/50 dark:bg-zinc-800/50 z-50">
+      <div className="fixed top-0 left-0 right-0 h-0.5 bg-transparent z-50">
         <div
-          className="h-full bg-purple-500 transition-all duration-150 ease-out"
+          className="h-full bg-foreground/60"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -34,11 +34,11 @@ export function BlogHeader() {
       {/* Back navigation */}
       <div className="mb-8 pt-2">
         <Link
-          href="/blog"
-          className="group inline-flex items-center gap-2 text-sm text-gray-500 dark:text-zinc-500 hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
+          href="/"
+          className="group inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors"
         >
           <svg
-            className="w-4 h-4 transition-transform group-hover:-translate-x-1"
+            className="w-4 h-4 transition-transform group-hover:-translate-x-0.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -50,7 +50,7 @@ export function BlogHeader() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Back to blog
+          Home
         </Link>
       </div>
     </>

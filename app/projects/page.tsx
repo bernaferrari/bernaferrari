@@ -1,60 +1,44 @@
 import { Metadata } from "next";
-import { ProjectGrid } from "@/components/project-card";
-import { featuredProjects, additionalProjects } from "@/lib/projects";
-import { GitHubProfileLink } from "@/components/github-profile-link";
+import { FeatureCard, ProjectList, SectionHeading } from "@/components/work";
+import { features, highlights, links, others } from "@/lib/work";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Open source projects and tools by Bernardo Ferrari",
+  description: "Open-source apps, tools and libraries by Bernardo Ferrari.",
 };
 
 export default function ProjectsPage() {
   return (
-    <div className="py-8">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold gradient-text mb-4">Projects</h1>
-        <p className="text-gray-600 dark:text-zinc-400 max-w-xl">
-          A collection of open source projects, tools, and experiments. Each one
-          solves a different problem – you won&apos;t find two that look or work
-          the same.
+    <div className="mx-auto max-w-6xl px-6">
+      <header className="rise pt-16 pb-16 sm:pt-24 sm:pb-20">
+        <h1 className="text-4xl font-medium tracking-[-0.03em] sm:text-5xl">Projects</h1>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          Apps, tools and libraries, all open source. Most started as something I needed myself.
         </p>
-      </div>
+      </header>
 
-      {/* Stats */}
-      <div className="grid grid-cols-3 gap-4 mb-10">
-        {[
-          { label: "Open Source Projects", value: "38+" },
-          { label: "GitHub Stars", value: "8k+" },
-          { label: "Years Building", value: "10+" },
-        ].map((stat) => (
-          <div key={stat.label} className="p-4 rounded-xl glass text-center">
-            <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-            <div className="text-xs text-gray-500 dark:text-zinc-500 mt-1">
-              {stat.label}
-            </div>
-          </div>
-        ))}
-      </div>
+      <section aria-labelledby="selected" className="pb-20 sm:pb-24">
+        <SectionHeading id="selected" title="Selected" />
+        <div className="grid gap-x-8 gap-y-14 md:grid-cols-2">
+          {features.map((feature, index) => (
+            <FeatureCard key={feature.name} feature={feature} priority={index < 2} />
+          ))}
+        </div>
+      </section>
 
-      {/* Highlighted Projects */}
-      <ProjectGrid projects={featuredProjects} title="Featured" />
-
-      {/* More Projects */}
-      <div className="mt-8">
-        <ProjectGrid projects={additionalProjects} title="More Projects" />
-      </div>
-
-      {/* CTA */}
-      <div className="mt-12 p-6 rounded-xl glass text-center">
-        <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-          See all projects on GitHub
-        </h3>
-        <p className="text-sm text-gray-500 dark:text-zinc-500 mb-4">
-          Browse all 38+ repositories and contributions
-        </p>
-        <GitHubProfileLink />
-      </div>
+      <section aria-labelledby="all" className="pb-8">
+        <SectionHeading id="all" title="Everything else">
+          <a
+            href={`${links.github}?tab=repositories`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted transition-colors hover:text-foreground"
+          >
+            All repositories on GitHub
+          </a>
+        </SectionHeading>
+        <ProjectList projects={[...highlights, ...others]} />
+      </section>
     </div>
   );
 }
