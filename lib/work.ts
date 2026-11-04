@@ -24,6 +24,8 @@ export interface Project {
   note: string;
   /** Shown on the home page's smaller cards. */
   image?: Feature["image"];
+  /** The app's own icon, for the text cards. `padded` for a glyph without its own tile. */
+  icon?: { src: string; padded?: boolean };
 }
 
 export const features: Feature[] = [
@@ -158,24 +160,28 @@ export const others: Project[] = [
     summary: "Build coherent, accessible color themes with the right colors.",
     url: "https://github.com/bernaferrari/color-studio",
     note: "440 ★",
+    icon: { src: "/icons/color-studio.png" },
   },
   {
     name: "KMPwright",
     summary: "Browser automation for Kotlin Multiplatform: Android, iOS and Chromium.",
     url: "https://kmpwright.vercel.app",
     note: "Library",
+    icon: { src: "/icons/kmpwright.png" },
   },
   {
     name: "CashBalancer",
     summary: "Balance money across assets and accounts.",
     url: "https://bernaferrari.github.io/CashBalancer/",
     note: "88 ★",
+    icon: { src: "/icons/cashbalancer.png" },
   },
   {
     name: "RandomColorScheme",
     summary: "Try different Flutter color schemes without the pain.",
     url: "https://bernaferrari.github.io/RandomColorScheme/",
     note: "77 ★",
+    icon: { src: "/icons/randomcolorscheme.png" },
   },
   {
     name: "ColorBlindnessFlutter",
@@ -194,12 +200,14 @@ export const others: Project[] = [
     summary: "Turn an AI chat answer into files with one paste.",
     url: "https://text-to-files.vercel.app",
     note: "Web",
+    icon: { src: "/icons/text-to-files.png", padded: true },
   },
   {
     name: "default-opener",
     summary: "Take back control of your default apps on macOS.",
     url: "https://github.com/bernaferrari/default-opener",
     note: "macOS",
+    icon: { src: "/icons/default-opener.png", padded: true },
   },
   {
     name: "fast-kotlin-diff-utils",

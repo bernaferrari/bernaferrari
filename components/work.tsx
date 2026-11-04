@@ -127,7 +127,39 @@ export function ProjectTiles({ projects }: { projects: Project[] }) {
   );
 }
 
-/** A project without a picture: a small card with its name, note and one line. */
+/** The app's icon, or its initials on a quiet tile when it has none. */
+function ProjectIcon({ project }: { project: Project }) {
+  const tile = "relative size-10 shrink-0 overflow-hidden rounded-[10px] border border-border";
+  if (project.icon) {
+    return (
+      <span className={`${tile} ${project.icon.padded ? "bg-white" : "bg-surface"}`}>
+        <Image
+          src={project.icon.src}
+          alt=""
+          fill
+          sizes="40px"
+          className={project.icon.padded ? "object-contain p-0.5" : "object-cover"}
+        />
+      </span>
+    );
+  }
+  const initials = project.name
+    .split(/[\s-]+|(?=[A-Z][a-z])/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0].toUpperCase())
+    .join("");
+  return (
+    <span
+      aria-hidden
+      className={`${tile} inline-flex items-center justify-center bg-surface font-mono text-xs text-muted`}
+    >
+      {initials}
+    </span>
+  );
+}
+
+/** A project without a picture: its icon, name, note and one line. */
 export function ProjectCards({ projects }: { projects: Project[] }) {
   return (
     <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -138,16 +170,19 @@ export function ProjectCards({ projects }: { projects: Project[] }) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track(project.name, project.url)}
-            className="group flex w-full flex-col rounded-lg border border-border p-5 transition-[border-color,background-color] duration-200 hover:border-border-strong hover:bg-surface"
+            className="group flex w-full gap-4 rounded-lg border border-border p-5 transition-[border-color,background-color] duration-200 hover:border-border-strong hover:bg-surface"
           >
-            <div className="flex items-baseline justify-between gap-3">
-              <h3 className="flex items-center gap-1.5 font-medium">
-                {project.name}
-                <Arrow className="text-faint transition-[transform,color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
-              </h3>
-              <span className="shrink-0 text-xs text-faint tabular-nums">{project.note}</span>
+            <ProjectIcon project={project} />
+            <div className="min-w-0 flex-1">
+              <div className="flex items-baseline justify-between gap-3">
+                <h3 className="flex min-w-0 items-center gap-1.5 font-medium">
+                  <span className="truncate">{project.name}</span>
+                  <Arrow className="text-faint transition-[transform,color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
+                </h3>
+                <span className="shrink-0 text-xs text-faint tabular-nums">{project.note}</span>
+              </div>
+              <p className="mt-1 text-sm leading-relaxed text-muted">{project.summary}</p>
             </div>
-            <p className="mt-1.5 text-sm leading-relaxed text-muted">{project.summary}</p>
           </a>
         </li>
       ))}
