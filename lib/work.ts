@@ -104,7 +104,7 @@ export const features: Feature[] = [
     name: "rport",
     summary:
       "GNU R's core runtime rewritten in Rust: parser, evaluator and math library, matching R on all 607 conformance tests.",
-    url: "https://rport.dev",
+    url: "https://github.com/bernaferrari/R-rust",
     meta: ["Rust", "Language runtime"],
     image: {
       src: "/work/rport-dark.png",

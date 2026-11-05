@@ -82,7 +82,7 @@ const gradle: PosterCard = {
 const rport: PosterCard = {
   kind: "poster",
   app: "rport",
-  url: "https://rport.dev",
+  url: "https://github.com/bernaferrari/R-rust",
   headline: ["R, rewritten", "in Rust."],
   sub: "Matches R on all 607 conformance tests.",
   image: {

@@ -14,7 +14,7 @@ export const publications: Publication[] = [
     authors: "B Ferrari, DP da Silva Junior, CM Oliveira, JSB Ortiz, R Pereira",
     venue: "Journal on Interactive Systems",
     year: 2020,
-    citations: 25,
+    citations: 29,
     url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sJaFHJIAAAAJ&citation_for_view=sJaFHJIAAAAJ:u-x6o8ySG0sC",
   },
   {
@@ -24,7 +24,7 @@ export const publications: Publication[] = [
       "JSB Ortiz, C Moreira, K Menezes, B Ferrari, D Silva Junior, R Pereira",
     venue: "Interacting with Computers",
     year: 2023,
-    citations: 9,
+    citations: 10,
     url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=sJaFHJIAAAAJ&citation_for_view=sJaFHJIAAAAJ:UeHWp8X0CEIC",
   },
   {

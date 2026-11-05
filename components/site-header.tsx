@@ -6,7 +6,6 @@ import posthog from "posthog-js";
 import { ThemeToggle } from "./theme-toggle";
 
 const nav = [
-  { label: "Work", href: "/#work" },
   { label: "Projects", href: "/projects" },
   { label: "Research", href: "/#research" },
   { label: "Contact", href: "/#contact" },
