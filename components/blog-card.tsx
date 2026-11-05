@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { Arrow } from "./work";
 
 export interface BlogPost {
   title: string;
@@ -14,90 +12,34 @@ export interface BlogPost {
   project?: string; // For contributions: which OSS project
 }
 
-interface BlogCardProps {
-  post: BlogPost;
-  index?: number;
-}
+/** One post: a row with the title, a line about it and the date, in the site's quiet style. */
+export function BlogCard({ post }: { post: BlogPost }) {
+  const meta = [post.date, post.readTime].filter(Boolean).join(" · ");
 
-export function BlogCard({ post, index = 0 }: BlogCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.4 }}
+    <Link
+      href={post.href}
+      className="group grid gap-x-8 gap-y-1 border-t border-border py-6 sm:grid-cols-[minmax(0,1fr)_auto]"
     >
-      <Link
-        href={post.href}
-        className="group block rounded-xl glass card-hover overflow-hidden"
-      >
-        {/* Optional Image */}
-        {post.image && (
-          <div className="aspect-[2/1] overflow-hidden">
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-        )}
-
-        <div className="p-5">
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors mb-2">
-                {post.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-zinc-400 line-clamp-2">
-                {post.description}
-              </p>
-              {(post.date || post.readTime) && (
-                <div className="flex items-center gap-3 mt-3 text-xs text-gray-500 dark:text-zinc-500">
-                  {post.date && <span>{post.date}</span>}
-                  {post.date && post.readTime && <span>•</span>}
-                  {post.readTime && <span>{post.readTime}</span>}
-                </div>
-              )}
-            </div>
-            {!post.image && (
-              <svg
-                className="w-5 h-5 text-gray-400 dark:text-zinc-600 group-hover:text-purple-500 group-hover:translate-x-1 transition-all shrink-0 mt-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            )}
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+      <div className="min-w-0">
+        <h3 className="flex items-center gap-1.5 text-lg font-medium tracking-tight">
+          {post.title}
+          <Arrow className="text-faint transition-colors group-hover:text-foreground" />
+        </h3>
+        <p className="mt-1 line-clamp-2 max-w-2xl text-muted">{post.description}</p>
+      </div>
+      {meta && <p className="text-sm text-faint tabular-nums sm:pt-1">{meta}</p>}
+    </Link>
   );
 }
 
-interface BlogGridProps {
-  posts: BlogPost[];
-  title?: string;
-}
-
-export function BlogGrid({ posts, title = "Latest Posts" }: BlogGridProps) {
+export function BlogGrid({ posts, title = "Latest posts" }: { posts: BlogPost[]; title?: string }) {
   return (
     <section className="py-8">
-      <motion.h2
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white"
-      >
-        {title}
-      </motion.h2>
-      <div className="space-y-4">
-        {posts.map((post, i) => (
-          <BlogCard key={post.href} post={post} index={i} />
+      <h2 className="mb-2 text-sm font-medium text-muted">{title}</h2>
+      <div className="border-b border-border">
+        {posts.map((post) => (
+          <BlogCard key={post.href} post={post} />
         ))}
       </div>
     </section>

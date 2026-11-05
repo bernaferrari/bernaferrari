@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { FeatureCard, PaperCards, ProjectTiles, SectionHeading, Arrow } from "@/components/work";
-import { HeroWork } from "@/components/hero-work";
+import { HeroStrip, HeroWork } from "@/components/hero-work";
 import { features, highlights, links } from "@/lib/work";
 import { publications } from "@/lib/publications";
 
 const proof = [
-  { value: "2M+", label: "people use Figma to Code" },
+  { value: "8.8k", label: "GitHub stars on my open-source projects" },
   { value: "WWDC20", label: "Swift Student Challenge winner" },
   { value: "4 papers", label: "on human-computer interaction" },
 ];
@@ -62,8 +62,10 @@ export default function HomePage() {
           <HeroWork />
         </div>
 
+        <HeroStrip />
+
         <dl
-          className="rise mt-14 grid grid-cols-1 gap-6 border-t border-border pt-6 sm:grid-cols-3 lg:mt-20"
+          className="rise mt-10 grid grid-cols-1 gap-6 border-t border-border pt-6 sm:grid-cols-3 lg:mt-20"
           style={{ animationDelay: "120ms" }}
         >
           {proof.map((item) => (
