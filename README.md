@@ -39,7 +39,7 @@ Creator of FigmaToCode (5.1k★) · 31 merged contributions to Flutter · TypeSc
 <a href="https://github.com/bernaferrari/markor"><img src="https://github.com/bernaferrari/markor/raw/main/assets/more.png" alt="Markor" width="49%"></a>
 <a href="https://github.com/bernaferrari/QuietGuard"><img src="https://github.com/bernaferrari/QuietGuard/raw/main/assets/more-light.png" alt="QuietGuard" width="49%"></a>
 <a href="https://github.com/bernaferrari/keepout"><img src="https://github.com/bernaferrari/keepout/blob/main/store-listing/en-US/readme/hero.jpg" alt="SDKMonitor" width="49%"></a>
-<a href="https://github.com/bernaferrari/EmojiSlider"><img src="https://raw.githubusercontent.com/bernaferrari/EmojiSlider/HEAD/assets/header.png" alt="EmojiSlider" width="49%"></a>
+<a href="https://github.com/bernaferrari/wifi-weakspot"><img src="https://github.com/bernaferrari/wifi-weakspot/blob/main/store-listing/en-US/readme/channels.jpg" alt="EmojiSlider" width="49%"></a>
 </div>
 
 ### Swift
