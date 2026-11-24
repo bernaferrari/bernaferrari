@@ -32,13 +32,13 @@ Creator of FigmaToCode (5.1k★) · 31 merged contributions to Flutter · TypeSc
 * 🧪 **[SDK Monitor](https://github.com/bernaferrari/SDKMonitor)** — Inspect target SDK versions from installed Android apps.
 * ✍️ **[Markor](https://github.com/bernaferrari/markor)** — Material 3 Expressive redesign for a Markdown editor.
 * 🛡️ **[QuietGuard](https://github.com/bernaferrari/QuietGuard)** — Material 3 Expressive redesign for a network firewall app.
-* 🔒 **[rethink-app](https://github.com/bernaferrari/rethink-app)** — Material 3 Expressive redesign for a privacy and DNS firewall app.
+* 🔒 **[rethink-app](https://github.com/bernaferrari/keepout)** — Material 3 Expressive redesign for a privacy and DNS firewall app.
 * 🧩 **[Diagonal Wipe Icon](https://github.com/bernaferrari/diagonal-wipe-icon)** — Smooth animated icon transitions for Compose.
 
 <div align="center">
 <a href="https://github.com/bernaferrari/markor"><img src="https://github.com/bernaferrari/markor/raw/main/assets/more.png" alt="Markor" width="49%"></a>
 <a href="https://github.com/bernaferrari/QuietGuard"><img src="https://github.com/bernaferrari/QuietGuard/raw/main/assets/more-light.png" alt="QuietGuard" width="49%"></a>
-<a href="https://github.com/bernaferrari/SDKMonitor"><img src="https://raw.githubusercontent.com/bernaferrari/SDKMonitor/HEAD/assets/header.png" alt="SDKMonitor" width="49%"></a>
+<a href="https://github.com/bernaferrari/keepout"><img src="https://github.com/bernaferrari/keepout/blob/main/store-listing/en-US/readme/hero.jpg" alt="SDKMonitor" width="49%"></a>
 <a href="https://github.com/bernaferrari/EmojiSlider"><img src="https://raw.githubusercontent.com/bernaferrari/EmojiSlider/HEAD/assets/header.png" alt="EmojiSlider" width="49%"></a>
 </div>
 
